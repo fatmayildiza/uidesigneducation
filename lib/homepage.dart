@@ -13,24 +13,25 @@ class _HomePageState extends State<HomePage> {
     return Stack(
       children: [
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             //color: Color.fromARGB(255, 142, 179, 197),
             gradient: LinearGradient(
-                colors: [
-                  Color(0XFFD4E7FE),
-                  Color(0XFFD9F9FB),
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                stops: [0.8, 0.2]),
+              colors: [
+                Color(0XFFD4E7FE),
+                Color(0XFFD9F9FB),
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              stops: [0.8, 0.2],
+            ),
           ),
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
           child: Column(
             children: [
               Container(
                 alignment: Alignment.centerRight,
                 child: RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                       text: "Hoşgeldiniz",
                       style: TextStyle(
                         color: Colors.black,
@@ -49,9 +50,7 @@ class _HomePageState extends State<HomePage> {
                       ]),
                 ),
               ),
-              SizedBox(
-                height: 15,
-              ),
+              const SizedBox(height: 15),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -68,18 +67,17 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                       borderRadius: BorderRadius.circular(15),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         fit: BoxFit.cover,
                         image: NetworkImage(
-                            "https://bublogta.com/wp-content/uploads/2021/05/aaron-burden-y02jEX_B0O0-unsplash-8903ea0d-1536x1153.jpg"),
+                          "https://bublogta.com/wp-content/uploads/2021/05/aaron-burden-y02jEX_B0O0-unsplash-8903ea0d-1536x1153.jpg",
+                        ),
                       ),
                     ),
                   ),
-                  SizedBox(
-                    width: 20,
-                  ),
+                  const SizedBox(width: 20),
                   Column(
-                    children: [
+                    children: const [
                       Text(
                         "Merhaba Fatma",
                         style: TextStyle(
@@ -88,9 +86,7 @@ class _HomePageState extends State<HomePage> {
                           color: Color(0XFF343E87),
                         ),
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      SizedBox(height: 10),
                       Text(
                         "Bu Haftaki Progmamın",
                         style: TextStyle(
@@ -98,9 +94,7 @@ class _HomePageState extends State<HomePage> {
                           color: Color.fromARGB(255, 244, 244, 248),
                         ),
                       ),
-                      SizedBox(
-                        height: 8,
-                      ),
+                      SizedBox(height: 8),
                       Text(
                         "Başarılar dilerim...",
                         style: TextStyle(
@@ -118,7 +112,7 @@ class _HomePageState extends State<HomePage> {
         Positioned(
           top: 185,
           child: Container(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
               horizontal: 15,
               vertical: 25,
             ),
@@ -131,9 +125,7 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 buildTitleRow("BUGÜNÜN DERSLERİ", 2),
-                SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
                 buildClassItem(),
                 buildClassItem(),
                 buildTitleRow("YAPILACAKLAR", 3),
@@ -144,9 +136,10 @@ class _HomePageState extends State<HomePage> {
                       buildTaskItem(5, "Flutter firebase öğren", Colors.red),
                       buildTaskItem(4, "ui design yap,", Colors.blue),
                       buildTaskItem(
-                          1,
-                          "Bu projede SingleChildScrollView,rich text,extract method ve bir çok özellik öğrendim",
-                          Colors.green),
+                        1,
+                        "Bu projede SingleChildScrollView,rich text,extract method ve bir çok özellik öğrendim",
+                        Colors.green,
+                      ),
                     ],
                   ),
                 ),
@@ -160,8 +153,8 @@ class _HomePageState extends State<HomePage> {
 
   Container buildTaskItem(int numDays, String courseTitle, Color color) {
     return Container(
-      margin: EdgeInsets.only(right: 15),
-      padding: EdgeInsets.all(12),
+      margin: const EdgeInsets.only(right: 15),
+      padding: const EdgeInsets.all(12),
       height: 140,
       width: 140,
       decoration: BoxDecoration(
@@ -178,9 +171,7 @@ class _HomePageState extends State<HomePage> {
               color: color,
             ),
           ),
-          SizedBox(
-            height: 5,
-          ),
+          const SizedBox(height: 5),
           Row(
             children: [
               Container(
@@ -191,26 +182,22 @@ class _HomePageState extends State<HomePage> {
                   borderRadius: BorderRadius.circular(3),
                 ),
               ),
-              SizedBox(
-                width: 5,
-              ),
+              const SizedBox(width: 5),
               Text(
                 "$numDays 2022",
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ],
           ),
+          const SizedBox(height: 20),
           SizedBox(
-            height: 20,
-          ),
-          Container(
             width: 100,
             child: Text(
-              "$courseTitle",
-              style: TextStyle(
+              courseTitle,
+              style: const TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
@@ -228,7 +215,7 @@ class _HomePageState extends State<HomePage> {
         RichText(
           text: TextSpan(
               text: title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
@@ -236,19 +223,21 @@ class _HomePageState extends State<HomePage> {
               children: [
                 TextSpan(
                   text: "($number)",
-                  style: TextStyle(
-                      fontSize: 12,
-                      color: Colors.grey,
-                      fontWeight: FontWeight.normal),
+                  style: const TextStyle(
+                    fontSize: 12,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.normal,
+                  ),
                 ),
               ]),
         ),
-        Text(
+        const Text(
           "Tüm Dersler",
           style: TextStyle(
-              fontSize: 12,
-              color: Color(0XFF343E87),
-              fontWeight: FontWeight.bold),
+            fontSize: 12,
+            color: Color(0XFF343E87),
+            fontWeight: FontWeight.bold,
+          ),
         )
       ],
     );
@@ -256,11 +245,11 @@ class _HomePageState extends State<HomePage> {
 
   Container buildClassItem() {
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-        color: Color.fromARGB(15, 221, 18, 35),
+        color: const Color.fromARGB(15, 221, 18, 35),
         borderRadius: BorderRadius.circular(30),
       ),
       child: Row(
@@ -268,7 +257,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Text(
                 "11:00",
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -287,26 +276,24 @@ class _HomePageState extends State<HomePage> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width - 160,
-                child: Text(
+                child: const Text(
                   " İlkokul Matematik Özel Ders",
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
               Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.mark_chat_read,
                     color: Colors.grey,
                     size: 20,
                   ),
+                  const SizedBox(width: 5),
                   SizedBox(
-                    width: 5,
-                  ),
-                  Container(
                     width: MediaQuery.of(context).size.width - 160,
-                    child: Text(
+                    child: const Text(
                       " Arı Yayınları+Bilfen ",
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -318,16 +305,14 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               Row(
-                children: [
+                children: const [
                   CircleAvatar(
                     backgroundImage: NetworkImage(
                       "https://www.picng.com/upload/book/png_book_29162.png",
                     ),
                     radius: 10,
                   ),
-                  SizedBox(
-                    width: 5,
-                  ),
+                  SizedBox(width: 5),
                   Text(
                     " Arı Yayınları+Bilfen ",
                     style: TextStyle(
